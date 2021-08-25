@@ -1,0 +1,22 @@
+{
+  "produtos": [
+    {
+      "idProduto": 1,
+      "nomeProduto": "Mouse",
+      "qtdItens": 2,
+      "vlrUnit": 150.23
+    },
+    {
+      "idProduto": 2,
+      "nomeProduto": "Teclado",
+      "qtdItens": 5,
+      "vlrUnit": 200.89
+    },
+    {
+      "idProduto": 3,
+      "nomeProduto": "Fone",
+      "qtdItens": 3,
+      "vlrUnit": 589.95
+    }
+  ]
+}
