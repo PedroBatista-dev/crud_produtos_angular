@@ -1,4 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.msg-success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.msg-error {
+  background-color: #e35e6b;
+  color: #fff;
+}
+
+button.mat-button .mat-icon,
+button.mat-flat-button .mat-icon,
+button.mat-icon-button .mat-icon,
+a.mat-button .mat-icon,
+a.mat-icon-button .mat-icon,
+a.mat-raised-button .mat-icon,
+a.mat-flat-button .mat-icon,
+a.mat-stroked-button .mat-icon {
+  vertical-align: top;
+  font-size: 1.25em;
+}

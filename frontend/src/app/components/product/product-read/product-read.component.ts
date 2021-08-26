@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../shared/product.model';
+import Swal from 'sweetalert2';
 import { ProductService } from '../shared/product.service';
 
 @Component({
@@ -20,9 +21,29 @@ export class ProductReadComponent implements OnInit {
   }
 
   deleteProduct(id: string): void {
-    this.productService.delete(id).subscribe(() => {
-      this.productService.showMessage(`Produto excluido com sucesso!`);
-      // falta dar reload na pagina!
+    Swal.fire({
+      title: 'Tem certeza?',
+      text: 'O registro será excluído permanentemente!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sim, apague!',
+      cancelButtonText: 'Não, engano',
+    }).then((result) => {
+      if (result.value) {
+        this.productService.delete(id).subscribe(
+          (result) => {
+            this.productService.read().subscribe((products) => {
+              this.products = products;
+            });
+            Swal.fire('Deletado!', 'Registro deletado com sucesso!', 'success');
+          },
+          (error) => {
+            Swal.fire('Cancelado', 'Operação foi cancelada!', 'error');
+          }
+        );
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        Swal.fire('Cancelado', 'Operação foi cancelada!', 'error');
+      }
     });
   }
 }

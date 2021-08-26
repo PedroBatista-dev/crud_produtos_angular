@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../shared/product.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from '../shared/product.model';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-product-form',
@@ -11,8 +12,8 @@ import { Product } from '../shared/product.model';
 export class ProductFormComponent implements OnInit {
   product: Product = {
     name: '',
-    qtItems: 0,
-    vlUnit: 0,
+    qtItems: null,
+    vlUnit: null,
   };
 
   titulo = 'Adicionar';
@@ -24,6 +25,10 @@ export class ProductFormComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.setCurrentAction();
+  }
+
+  setCurrentAction(): void {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
       this.titulo = 'Alterar';

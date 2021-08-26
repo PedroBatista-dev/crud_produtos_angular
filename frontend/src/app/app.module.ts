@@ -25,6 +25,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ProductReadComponent } from './components/product/product-read/product-read.component';
 import { MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { NgxMaskModule } from 'ngx-mask';
+import { NgxCurrencyModule } from 'ngx-currency';
 
 import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
@@ -57,6 +61,10 @@ registerLocaleData(localePt);
     MatFormFieldModule,
     MatInputModule,
     MatTableModule,
+    MatIconModule,
+    MatTooltipModule,
+    NgxMaskModule,
+    NgxCurrencyModule,
   ],
   providers: [
     {
