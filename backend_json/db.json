@@ -1,22 +1,22 @@
 {
-  "produtos": [
+  "products": [
     {
-      "idProduto": 1,
-      "nomeProduto": "Mouse",
-      "qtdItens": 2,
-      "vlrUnit": 150.23
+      "id": 1,
+      "name": "Mouse",
+      "qtItems": 2,
+      "vlUnit": 150.23
     },
     {
-      "idProduto": 2,
-      "nomeProduto": "Teclado",
-      "qtdItens": 5,
-      "vlrUnit": 200.89
+      "id": 2,
+      "name": "Teclado",
+      "qtItems": 5,
+      "vlUnit": 200.89
     },
     {
-      "idProduto": 3,
-      "nomeProduto": "Fone",
-      "qtdItens": 3,
-      "vlrUnit": 589.95
+      "id": 3,
+      "name": "Fone",
+      "qtItems": 3,
+      "vlUnit": 589.95
     }
   ]
 }
