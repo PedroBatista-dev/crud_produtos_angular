@@ -1,5 +1,5 @@
 export interface Product {
-  id?: string;
+  id?: number;
   name: string;
   qtItems: number | null;
   vlUnit: number | null;
