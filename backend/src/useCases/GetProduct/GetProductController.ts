@@ -1,5 +1,4 @@
 import { Request, Response } from "express";
-import { ResponseHTTP, responsePadrao } from "../../Reponse.http";
 import { GetProductUseCase } from "./GetProductUseCase";
 
 export class GetProductController {

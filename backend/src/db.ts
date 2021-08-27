@@ -4,10 +4,15 @@ const DATABASE_FILE = process.env.DATABASE_FILE;
 
 export const openConnection = () => {
   let db = new sqlite3.Database(DATABASE_FILE);
+  return db;
+};
+
+export const createTable = () => {
+  let db = new sqlite3.Database(DATABASE_FILE);
   db.run(
     "CREATE TABLE IF NOT EXISTS products (id INTEGER PRIMARY KEY AUTOINCREMENT, name text NOT NULL, qtItems int NOT NULL, vlUnit float NOT NULL)"
   );
-  return db;
+  db.close();
 };
 
 export const dbQuery = (query: string, params?: any[]) => {

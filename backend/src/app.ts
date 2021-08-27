@@ -1,9 +1,12 @@
 import dotenv from "dotenv";
 dotenv.config();
 import express from "express";
+import { createTable } from "./db";
 import bodyParser from "body-parser";
 import { router } from "./routes";
 import cors from "cors";
+
+createTable();
 
 const app = express();
 
