@@ -32,9 +32,9 @@ export class ProductFormComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
       this.titulo = 'Alterar';
-      this.productService
-        .readById(id)
-        .subscribe((product) => (this.product = product));
+      this.productService.readById(id).subscribe((product) => {
+        this.product = product;
+      });
     }
   }
 

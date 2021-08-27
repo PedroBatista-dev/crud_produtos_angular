@@ -1,5 +1,4 @@
 import { Response, Request } from "express";
-import { ResponseHTTP, responsePadrao } from "../../Reponse.http";
 import { DeleteProductUseCase } from "./DeleteProductUseCase";
 
 export class DeleteProductController {
@@ -7,20 +6,11 @@ export class DeleteProductController {
 
   async handler(request: Request, response: Response): Promise<void> {
     const id = request.params.id;
-    const dados = new ResponseHTTP();
     try {
-      const retorno = await this.deleteProductUseCase.execute(id);
-      if (retorno) {
-        dados.status = true;
-        dados.statusCode = 200;
-        dados.data = {};
-      }
+      await this.deleteProductUseCase.execute(id);
+      response.status(200).send({});
     } catch (err) {
-      dados.status = false;
-      dados.statusCode = 400;
-      dados.erros = err;
-    } finally {
-      responsePadrao(dados, response);
+      response.status(400).send(err);
     }
   }
 }

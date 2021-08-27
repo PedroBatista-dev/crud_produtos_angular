@@ -1,9 +1,9 @@
 import { Product } from "../entities/Product";
 
 export interface IProductsRepository {
-  save(product: Product): Promise<Product | undefined>;
-  update(product: Product): Promise<Product | undefined>;
-  delete(id: string): Promise<boolean>;
+  save(product: Product): Promise<void>;
+  update(product: Product): Promise<void>;
+  delete(id: string): Promise<void>;
   get(): Promise<Product[]>;
   getById(id: string): Promise<Product>;
 }

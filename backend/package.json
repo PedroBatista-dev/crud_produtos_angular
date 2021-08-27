@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "tsnd --transpile-only --respawn --ignore-watch node_modules src/server.ts",
-    "test": "mocha --timeout 30000 --require ts-node/register src/**/test/*.spec.ts"
+    "test": "mocha --timeout 30000 --require ts-node/register src/test/product.spec.ts"
   },
   "keywords": [],
   "author": "",

@@ -4,7 +4,9 @@ export class Product {
   public qtItems: number;
   public vlUnit: number;
 
-  constructor(props: Omit<Product, "id">, id?: string) {
+  constructor(props: Omit<Product, "id">, id?: number) {
     Object.assign(this, props);
+
+    if (id) this.id = id;
   }
 }
