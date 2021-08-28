@@ -8,7 +8,7 @@ export const product = {
 describe("Module Products", () => {
   require("../useCases/CreateProduct/CreateProductUseCase.spec")(product);
   require("../useCases/UpdateProduct/UpdateProductUseCase.spec")(product);
-  require("../useCases/GetProduct/GetProductUseCase.spec")();
+  require("../useCases/GetProduct/GetProductUseCase.spec")(product);
   require("../useCases/GetByIdProduct/GetByIdProductUseCase.spec")(product);
   require("../useCases/DeleteProduct/DeleteProductUseCase.spec")(product);
 });

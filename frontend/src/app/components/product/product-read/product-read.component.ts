@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../shared/product.model';
 import Swal from 'sweetalert2';
 import { ProductService } from '../shared/product.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-read',
@@ -11,11 +12,22 @@ import { ProductService } from '../shared/product.service';
 export class ProductReadComponent implements OnInit {
   products: Product[] = [];
   displayedColumns = ['id', 'name', 'qtItems', 'vlUnit', 'action'];
+  searchProduct: string = '';
 
-  constructor(private productService: ProductService) {}
+  constructor(private router: Router, private productService: ProductService) {}
 
   ngOnInit(): void {
     this.productService.read().subscribe((products) => {
+      this.products = products;
+    });
+  }
+
+  navigateForCreateProduct(): void {
+    this.router.navigate(['/products/create']);
+  }
+
+  search(): void {
+    this.productService.read(this.searchProduct).subscribe((products) => {
       this.products = products;
     });
   }

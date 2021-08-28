@@ -1,3 +1,10 @@
+<mat-form-field>
+  <input matInput type="text" name="searchProduct" placeholder="Pesquisar pelo nome" (input)="search()"
+    [(ngModel)]="searchProduct" />
+</mat-form-field>
+<button class="new-button" mat-raised-button color="primary" (click)="navigateForCreateProduct()">Novo</button>
+
+
 <table mat-table [dataSource]="products" class="mat-elevation-z4">
 
   <!-- Id Column -->

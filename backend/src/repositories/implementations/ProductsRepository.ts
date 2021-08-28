@@ -27,8 +27,11 @@ export class ProductsRepository implements IProductsRepository {
     if (changes) return true;
   }
 
-  async get(): Promise<Product[]> {
-    return await dbQuery("SELECT * FROM products");
+  async get(name: string): Promise<Product[]> {
+    if (name) {
+      name = `${name}%`;
+      return await dbQuery("SELECT * FROM products WHERE name LIKE ?", [name]);
+    } else return await dbQuery("SELECT * FROM products");
   }
 
   async getById(id: string): Promise<any> {

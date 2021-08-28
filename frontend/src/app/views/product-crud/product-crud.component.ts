@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { HeaderService } from 'src/app/components/template/header/shared/header.service';
 
 @Component({
@@ -8,7 +7,7 @@ import { HeaderService } from 'src/app/components/template/header/shared/header.
   styleUrls: ['./product-crud.component.css'],
 })
 export class ProductCrudComponent implements OnInit {
-  constructor(private router: Router, headerService: HeaderService) {
+  constructor(headerService: HeaderService) {
     headerService.headerData = {
       title: 'Cadastro de Produtos',
       icon: 'storefront',
@@ -17,8 +16,4 @@ export class ProductCrudComponent implements OnInit {
   }
 
   ngOnInit(): void {}
-
-  navigateForCreateProduct(): void {
-    this.router.navigate(['/products/create']);
-  }
 }

@@ -30,11 +30,13 @@ export class ProductService {
     );
   }
 
-  read(): Observable<Product[]> {
-    return this.http.get<ResponseHttp>(this.baseUrl).pipe(
-      map((obj) => obj.data),
-      catchError((e) => this.errorHandler(e))
-    );
+  read(name: string = ''): Observable<Product[]> {
+    return this.http
+      .get<ResponseHttp>(this.baseUrl, { params: { name: name } })
+      .pipe(
+        map((obj) => obj.data),
+        catchError((e) => this.errorHandler(e))
+      );
   }
 
   readById(id: string): Observable<Product> {

@@ -9,3 +9,7 @@ table {
 .delete {
   color: #e35e6b;
 }
+
+.new-button {
+  float: right;
+}
