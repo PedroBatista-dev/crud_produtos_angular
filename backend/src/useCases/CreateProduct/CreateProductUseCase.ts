@@ -4,8 +4,8 @@ import { ICreateProductRequestDTO } from "./CreateProductDTO";
 
 export class CreateProductUseCase {
   constructor(private productsRepository: IProductsRepository) {}
-  async execute(data: ICreateProductRequestDTO): Promise<void> {
+  async execute(data: ICreateProductRequestDTO): Promise<Product> {
     const product = new Product(data);
-    await this.productsRepository.save(product);
+    return await this.productsRepository.save(product);
   }
 }
