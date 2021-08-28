@@ -18,3 +18,6 @@ Portanto, na pasta do projeto deve ser considerado apenas as pastas front-end e 
 
 1º) Antes inicializar as aplicações back-end e front-end é necessário instalar as dependências dos projetos com o comando 'npm i'. 
 2º) Após as instalações das dependências é só utilizar o comando 'npm start' para inicializar as aplicações.
+3º) Para testar a API WEB: 
+  1º) Inicializar a aplicação back-end com o comando 'npm start';
+  2º) Inicializar o teste com o comando 'npm test' em outro terminal.
