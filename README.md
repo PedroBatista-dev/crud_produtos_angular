@@ -6,10 +6,10 @@ No front-end foi utilizado uma arquitetura baseada em componentes com o intuito 
 no tempo de desenvolvimento e ter o mínimo de dependência com outros componentes.
 
 Com as funcionalidades da aplicação front-end testadas, foi desenvolvido uma API Web com o NodeJs que armazena os dados no banco de dados
-no SQLite.
+SQLite.
 
-No back-end foi utilizado uma arquitetura baseada em SOLID visando facilidade de manutenção, adaptação às alterações do escopo, testável e
-de fácil entendimento.
+No back-end foi utilizado uma arquitetura Clean baseada nos princípios SOLID visando facilidade de manutenção, adaptação às alterações do escopo, 
+testável e de fácil entendimento.
 
 Portanto, na pasta do projeto deve ser considerado apenas as pastas front-end e back-end.
 
